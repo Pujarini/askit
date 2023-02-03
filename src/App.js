@@ -1,10 +1,11 @@
 import "./App.css";
-import Home from "./Pages/Home";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./utils/routeConfig";
 
 function App() {
   return (
     <div className="text-bold text-red-300">
-      <Home />
+      <RouterProvider router={routes} />
     </div>
   );
 }

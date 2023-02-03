@@ -1,14 +1,15 @@
 import SelectComponent from "../commons/SelectComponent/SelectComponent";
 
 const options = [
-  { id: 0, name: "Home" },
-  { id: 1, name: "React" },
-  { id: 2, name: "Next" },
-  { id: 3, name: "Help wanted" },
+  { id: 0, name: "Choose Category" },
+  { id: 1, name: "Home" },
+  { id: 2, name: "React" },
+  { id: 3, name: "Next" },
+  { id: 4, name: "Help wanted" },
 ];
 
 const CategoryComponent = () => {
-  return <SelectComponent title="Choose Category" options={options} />;
+  return <SelectComponent categories={options} />;
 };
 
 export default CategoryComponent;
