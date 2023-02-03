@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
 import NextPage from "../Pages/NextPage";
+import PostPage from "../Pages/PostPage";
 import ReactPage from "../Pages/ReactPage";
 
 const routeConfig = [
@@ -17,6 +18,10 @@ const routeConfig = [
         element: <NextPage />,
       },
     ],
+  },
+  {
+    path: "/react/:id",
+    element: <PostPage />,
   },
 ];
 

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "post1",
+    "title": "Why React is so fast",
+    "votes": [{ "upvotes": 5 }, { "downvotes": 7 }],
+    "author": "Pujarini Jena",
+    "category": "react",
+    "comments": [
+      {
+        "name": "xyz",
+        "reply": "hello world",
+        "replies": [
+          { "name": "wow", "reply": "whatever" },
+          { "name": "wow2", "reply": "whatever found" },
+          { "name": "wow3", "reply": "whatever found" }
+        ]
+      }
+    ]
+  }
+]

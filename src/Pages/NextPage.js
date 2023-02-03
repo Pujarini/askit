@@ -1,5 +1,5 @@
 const NextPage = () => {
-  return <div>Next</div>;
+  return <div className="basis-2/4">Next</div>;
 };
 
 export default NextPage;
