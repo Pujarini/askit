@@ -1,6 +1,13 @@
+import channels from "../../data/channel.json";
+import Channel from "./Channel";
 const ChannelComponent = () => {
   return (
-    <div className="basis-1/4 border border-slate-200 m-5 p-2">Channel</div>
+    <div className="border border-slate-200 m-2  p-5 text-left mt-5 rounded-lg h-[350px] overflow-y-auto">
+      <h1 className="font-bold">Channels</h1>
+      {channels.map((channel) => {
+        return <Channel name={channel.channel} />;
+      })}
+    </div>
   );
 };
 

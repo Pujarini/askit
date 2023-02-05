@@ -1,21 +1,12 @@
 import data from "../../../data/posts.json";
-import PostCard from "./Post";
+import CardComponent from "./CardComponent";
 
 const PostList = () => {
   return (
-    <div className="p-5">
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
-      <PostCard />
+    <div className="">
+      {data.map((cards) => {
+        return <CardComponent {...cards} />;
+      })}
     </div>
   );
 };
