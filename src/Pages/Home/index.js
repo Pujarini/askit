@@ -9,10 +9,9 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="flex text-slate-50">
-        <DummyComponent />
+      <div className="flex text-slate-50 justify-center">
         <Outlet />
-        <div className="flex flex-col basis-1/4 mt-5">
+        <div className="flex flex-col mt-5">
           <ChannelComponent />
           <FollowComponent />
         </div>

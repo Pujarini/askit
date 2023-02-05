@@ -8,7 +8,7 @@ const PostPage = () => {
   console.log(post);
 
   return (
-    <div className="basis-2/4 flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start ">
+    <div className="flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start w-[700px]">
       <div className="flex items-center">
         <img
           className="w-5 h-5 rounded-full mr-4"
