@@ -22,11 +22,14 @@ const Comment = ({ comment }) => {
           Reply
         </p>
         <p className="text-sm text-slate-500 flex items-center cursor-pointer hover:underline">
-          5 likes
+          {comment?.likes} likes
         </p>
-        <p className="text-sm text-slate-500 flex items-center hover:underline cursor-pointer">
-          10 comments
-        </p>
+        {comment?.replies && (
+          <p className="text-sm text-slate-500 flex items-center hover:underline cursor-pointer">
+            {comment?.replies.length}{" "}
+            {comment?.replies.length > 1 ? "comments" : "comment"}
+          </p>
+        )}
         <p className="text-sm text-slate-500 flex items-center cursor-pointer hover:underline">
           Save
         </p>

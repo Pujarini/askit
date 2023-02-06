@@ -10,27 +10,34 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
           {
             "name": "wow",
             "reply": "whatever",
-            "replies": [{ "name": "wow2", "reply": "whatever found" }]
+            "likes": 15,
+            "replies": [
+              { "name": "wow2", "reply": "whatever found", "likes": 59 }
+            ]
           },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       },
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
           {
             "name": "wow",
             "reply": "whatever",
-            "replies": [{ "name": "wow2", "reply": "whatever found" }]
+            "replies": [
+              { "name": "wow2", "reply": "whatever found", "likes": 5 }
+            ]
           },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -46,10 +53,11 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
-          { "name": "wow", "reply": "whatever" },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow", "reply": "whatever", "likes": 5 },
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -65,10 +73,11 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
-          { "name": "wow", "reply": "whatever" },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow", "reply": "whatever", "likes": 5 },
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -84,10 +93,11 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
-          { "name": "wow", "reply": "whatever" },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow", "reply": "whatever", "likes": 5 },
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -103,10 +113,11 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
-          { "name": "wow", "reply": "whatever" },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow", "reply": "whatever", "likes": 5 },
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -122,14 +133,17 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
           {
             "name": "wow",
             "reply": "whatever",
-            "replies": [{ "name": "wow2", "reply": "whatever found" }]
+            "replies": [
+              { "name": "wow2", "reply": "whatever found", "likes": 5 }
+            ]
           },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]
@@ -145,10 +159,11 @@
       {
         "name": "xyz",
         "reply": "hello world",
+        "likes": 5,
         "replies": [
-          { "name": "wow", "reply": "whatever" },
-          { "name": "wow2", "reply": "whatever found" },
-          { "name": "wow3", "reply": "whatever found" }
+          { "name": "wow", "reply": "whatever", "likes": 5 },
+          { "name": "wow2", "reply": "whatever found", "likes": 5 },
+          { "name": "wow3", "reply": "whatever found", "likes": 5 }
         ]
       }
     ]

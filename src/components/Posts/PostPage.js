@@ -1,11 +1,11 @@
 import data from "../../data/posts.json";
 import { useParams } from "react-router-dom";
 import NestedComments from "./NestedComments";
+import { totalComments } from "../../utils/commentCount";
 
 const PostPage = () => {
   const { id } = useParams();
   const post = data.find((post) => post.id === id);
-  console.log(post);
 
   return (
     <div className="flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start w-[700px]">
@@ -27,7 +27,7 @@ const PostPage = () => {
       <p className="text-sm mt-5">{post?.description}</p>
       <div className="flex items-center gap-5 mt-5 ">
         <p className="text-sm text-slate-500 flex items-center hover:underline cursor-pointer">
-          {post.comments.length} comments
+          {totalComments(post.comments)} comments
         </p>
         <p className="text-sm text-slate-500 flex items-center cursor-pointer">
           Save
