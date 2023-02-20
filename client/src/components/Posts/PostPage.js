@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NestedComments from "./NestedComments";
-// import { totalComments } from "../../utils/commentCount";
 import { fetchPostsById } from "../../services/fetchPosts";
 import { useFetchUser } from "../../hooks/useFetchUsers";
 
