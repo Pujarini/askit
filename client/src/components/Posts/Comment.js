@@ -1,7 +1,6 @@
 import CommentInfo from "./CommentInfo";
 
 const Comment = ({ comment }) => {
-  console.log(comment);
   return (
     <div className="border border-slate-100 rounded-sm w-full p-5 ">
       <div className="flex items-center">

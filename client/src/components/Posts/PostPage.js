@@ -19,8 +19,6 @@ const PostPage = () => {
     setPost(response);
   };
 
-  console.log(post?.comments);
-
   return (
     <div className="flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start w-[700px]">
       <div className="flex items-center">

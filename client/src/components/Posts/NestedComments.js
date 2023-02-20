@@ -1,20 +1,34 @@
+import { useMemo } from "react";
 import Comment from "./Comment";
 
 const NestedComments = ({ comments }) => {
-  console.log(comments);
+  const getCommentsByParentId = useMemo(() => {
+    const group = {};
+    comments?.forEach((comment) => {
+      const id = comment.parentId ? comment.parentId : "root";
+      group[id] ||= [];
+      group[id].push(comment);
+    });
+    return group;
+  }, [comments]);
+
+  const getChildComments = (parentId) => {
+    return getCommentsByParentId[parentId];
+  };
+
   const renderCommentList = (reply) => {
-    console.log(reply);
     return (
       <>
         {reply &&
-          reply.map((comment) => {
-            console.log(comment);
+          reply?.map((comment) => {
             return (
               <>
                 <Comment comment={comment} />
-                {/* <div className="ml-10 mt-5">
-                  {comment.parentId && renderCommentList(comment.parentId)}
-                </div> */}
+                {getChildComments(comment?.id)?.length > 0 && (
+                  <div className="my-2 ml-10">
+                    {renderCommentList(getChildComments(comment?.id))}
+                  </div>
+                )}
               </>
             );
           })}
@@ -24,7 +38,7 @@ const NestedComments = ({ comments }) => {
 
   return (
     <div className="flex flex-col mt-5 w-full gap-2">
-      {comments && renderCommentList(comments)}
+      {comments && renderCommentList(getCommentsByParentId["root"])}
     </div>
   );
 };
