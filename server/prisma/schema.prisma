@@ -16,6 +16,8 @@ model Post{
   description String
   category String
   comments  Comment[]
+  user        User     @relation(fields: [userId], references: [id], onDelete:NoAction)
+  userId      String
 }
 
 model User {
@@ -23,6 +25,7 @@ model User {
   email   String   @unique
   name    String?
   comments Comment[]
+  posts Post[]
 }
 
 model Comment{

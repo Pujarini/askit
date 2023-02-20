@@ -1,11 +1,25 @@
-import data from "../../data/posts.json";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NestedComments from "./NestedComments";
-import { totalComments } from "../../utils/commentCount";
+// import { totalComments } from "../../utils/commentCount";
+import { fetchPostsById } from "../../services/fetchPosts";
+import { useFetchUser } from "../../hooks/useFetchUsers";
 
 const PostPage = () => {
   const { id } = useParams();
-  const post = data.find((post) => post.id === id);
+  const [post, setPost] = useState({});
+  const user = useFetchUser(post.userId);
+
+  useEffect(() => {
+    fetchPostInfo();
+  }, [id]);
+
+  const fetchPostInfo = async () => {
+    const response = await fetchPostsById(id);
+    setPost(response);
+  };
+
+  console.log(post?.comments);
 
   return (
     <div className="flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start w-[700px]">
@@ -18,7 +32,7 @@ const PostPage = () => {
         <div className="text-sm ">
           <span className="text-slate-500 leading-none mr-2 text-sm">
             {" "}
-            Posted by {post.author}
+            Posted by {user}
           </span>
           <span className="text-slate-500 text-sm">Aug 18</span>
         </div>
@@ -27,13 +41,13 @@ const PostPage = () => {
       <p className="text-sm mt-5">{post?.description}</p>
       <div className="flex items-center gap-5 mt-5 ">
         <p className="text-sm text-slate-500 flex items-center hover:underline cursor-pointer">
-          {totalComments(post.comments)} comments
+          {post?.comments && post?.comments.length} comments
         </p>
         <p className="text-sm text-slate-500 flex items-center cursor-pointer">
           Save
         </p>
       </div>
-      <NestedComments comments={post.comments} />
+      <NestedComments comments={post?.comments} />
     </div>
   );
 };

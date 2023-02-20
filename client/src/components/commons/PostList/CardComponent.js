@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useFetchUser } from "../../../hooks/useFetchUsers";
+import { fetchUsers } from "../../../services/fetchUsers";
 import { totalComments } from "../../../utils/commentCount";
 
-const CardComponent = ({ title, author, category, comments, id }) => {
+const CardComponent = ({ id, title, category, userId }) => {
   const [show, setShow] = useState(true);
+  const author = useFetchUser(userId);
 
   const showText = () => {
     if (show) {
@@ -59,7 +62,7 @@ const CardComponent = ({ title, author, category, comments, id }) => {
         </div>
         <div className="flex items-center gap-5">
           <p className="text-sm text-slate-500 flex items-center hover:underline cursor-pointer">
-            {totalComments(comments)} comments
+            {/* {totalComments(comments)} comments */}
           </p>
           <p className="text-sm text-slate-500 flex items-center cursor-pointer">
             Save

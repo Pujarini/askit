@@ -1,11 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.REACT_APP_SERVER_URL,
   withCredentials: true, // for cookies
 });
-
-console.log(api);
 
 export function makeRequest(url, options) {
   return api(url, options)

@@ -1,26 +1,30 @@
 import Comment from "./Comment";
 
 const NestedComments = ({ comments }) => {
+  console.log(comments);
   const renderCommentList = (reply) => {
+    console.log(reply);
     return (
       <>
-        {reply.map((comment) => {
-          return (
-            <>
-              <Comment comment={comment} />
-              <div className="ml-10 mt-5">
-                {comment.replies && renderCommentList(comment.replies)}
-              </div>
-            </>
-          );
-        })}
+        {reply &&
+          reply.map((comment) => {
+            console.log(comment);
+            return (
+              <>
+                <Comment comment={comment} />
+                {/* <div className="ml-10 mt-5">
+                  {comment.parentId && renderCommentList(comment.parentId)}
+                </div> */}
+              </>
+            );
+          })}
       </>
     );
   };
 
   return (
     <div className="flex flex-col mt-5 w-full gap-2">
-      {renderCommentList(comments)}
+      {comments && renderCommentList(comments)}
     </div>
   );
 };

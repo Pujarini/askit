@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../Pages/Home";
 import NextPage from "../Pages/NextPage";
 import ReactPage from "../Pages/ReactPage";
-const PostsPage = lazy(() => import("../components/Posts/PostPage"));
+const PostPage = lazy(() => import("../components/Posts/PostPage"));
 
 const routeConfig = [
   {
@@ -22,7 +22,7 @@ const routeConfig = [
         path: "/react/post/:id",
         element: (
           <Suspense fallback={<div>Loading....</div>}>
-            <PostsPage />
+            <PostPage />
           </Suspense>
         ),
       },

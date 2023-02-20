@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import data from "../../../data/posts.json";
+// import data from "../../../data/posts.json";
 import { fetchPosts } from "../../../services/fetchPosts";
 import CardComponent from "./CardComponent";
 
@@ -15,11 +15,10 @@ const PostList = () => {
     setPosts(data);
   };
 
-  console.log(posts);
   return (
     <div className="mb-5">
-      {data.map((cards) => {
-        return <CardComponent {...cards} />;
+      {posts.map((cards) => {
+        return <CardComponent {...cards} key={cards.id} />;
       })}
     </div>
   );
