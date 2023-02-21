@@ -10,7 +10,7 @@ export const useFetchUser = (id) => {
 
   const fetchUser = async () => {
     const data = await fetchUsers(id);
-    setAuthor(data.name);
+    setAuthor(data?.name);
   };
   return author;
 };

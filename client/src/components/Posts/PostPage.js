@@ -7,7 +7,7 @@ import { useFetchUser } from "../../hooks/useFetchUsers";
 const PostPage = () => {
   const { id } = useParams();
   const [post, setPost] = useState({});
-  const user = useFetchUser(post.userId);
+  const user = useFetchUser(post?.userId);
 
   useEffect(() => {
     fetchPostInfo();

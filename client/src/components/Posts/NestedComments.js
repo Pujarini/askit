@@ -23,7 +23,7 @@ const NestedComments = ({ comments }) => {
           reply?.map((comment) => {
             return (
               <>
-                <Comment comment={comment} />
+                <Comment comment={comment} key={comment.id} />
                 {getChildComments(comment?.id)?.length > 0 && (
                   <div className="my-2 ml-10">
                     {renderCommentList(getChildComments(comment?.id))}
