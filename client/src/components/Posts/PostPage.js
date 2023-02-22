@@ -3,11 +3,19 @@ import { useParams } from "react-router-dom";
 import NestedComments from "./NestedComments";
 import { fetchPostsById } from "../../services/fetchPosts";
 import { useFetchUser } from "../../hooks/useFetchUsers";
+import CreateComment from "./CreateComment";
+import { useAsyncFn } from "../../hooks/useAsync";
+import { createCommentService } from "../../services/createCommentService";
 
 const PostPage = () => {
   const { id } = useParams();
   const [post, setPost] = useState({});
   const user = useFetchUser(post?.userId);
+  const {
+    loading,
+    error,
+    execute: createCommentFn,
+  } = useAsyncFn(createCommentService);
 
   useEffect(() => {
     fetchPostInfo();
@@ -17,6 +25,14 @@ const PostPage = () => {
     const response = await fetchPostsById(id);
     setPost(response);
   };
+
+  const onCreateComment = (message) => {
+    return createCommentFn({ postId: post?.id, message }).then((comment) => {
+      console.log(comment);
+    });
+  };
+
+  console.log(loading, "aloading");
 
   return (
     <div className="flex flex-col mt-5 mr-5 rounded-md p-5 bg-[#1A1A1B] items-start w-[700px]">
@@ -44,6 +60,11 @@ const PostPage = () => {
           Save
         </p>
       </div>
+      <CreateComment
+        onSubmit={onCreateComment}
+        loading={loading}
+        error={error}
+      />
       <NestedComments comments={post?.comments} />
     </div>
   );
